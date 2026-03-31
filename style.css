@@ -22,8 +22,8 @@
     --radius: 16px;
     --radius-sm: 10px;
     --radius-xs: 6px;
-    --font: 'Poppins', system-ui, sans-serif;
-    --font-head: 'Playfair Display', Georgia, serif;
+    --font: 'Lato', system-ui, sans-serif;
+    --font-head: 'Lato', system-ui, sans-serif;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
