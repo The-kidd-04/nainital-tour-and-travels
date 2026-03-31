@@ -42,7 +42,9 @@
       "Bash(curl -sI \"https://images.unsplash.com/photo-1585136917228-22fab9be6750?w=500&q=75\")",
       "Bash(curl -sI \"https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=500&q=75\")",
       "Bash(curl -sI \"https://images.unsplash.com/photo-1564409972016-2825589beaed?w=500&q=75\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(\"UA=Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" __NEW_LINE_64b68f4444b17923__ echo '=== Mussoorie ===' curl -sA $UA https://www.pexels.com/search/mussoorie/)"
     ]
   }
 }
