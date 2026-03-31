@@ -1,14 +1,18 @@
 /* ===== BLOG PAGE STYLES ===== */
 
+/* Full width fix for mobile */
+html,body{width:100%;overflow-x:hidden;margin:0;padding:0}
+
 /* Nav */
+.blog-navbar{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 1px 12px rgba(0,0,0,.06);padding:10px 0;width:100%}
 .blog-nav-links{display:flex;gap:4px;align-items:center}
 .blog-nav-links a{padding:8px 14px;font-size:14px;font-weight:500;color:var(--dark-3);border-radius:8px;transition:all .25s}
 .blog-nav-links a:hover{color:var(--primary);background:var(--primary-light)}
 .blog-back-btn{display:none;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--primary);padding:8px 14px;border-radius:8px;background:var(--primary-light)}
 
 /* Hero Banner */
-.blog-hero{position:relative;height:420px;overflow:hidden}
-.blog-hero img{width:100%;height:100%;object-fit:cover}
+.blog-hero{position:relative;height:420px;overflow:hidden;margin:0;padding:0}
+.blog-hero img{width:100%;height:100%;object-fit:cover;display:block}
 .blog-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,.3) 0%,rgba(15,23,42,.75) 100%)}
 .blog-hero-content{position:absolute;bottom:40px;left:0;right:0;padding:0 24px;max-width:1200px;margin:0 auto;color:#fff}
 .blog-breadcrumb{display:inline-block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:12px;padding:4px 14px;background:rgba(255,255,255,.1);border-radius:50px;backdrop-filter:blur(8px)}
@@ -94,8 +98,9 @@
     .nav-container .btn-sm{padding:8px 14px;font-size:12px}
     .logo-img{height:32px}
 
-    /* Hero */
-    .blog-hero{height:300px}
+    /* Hero - full width */
+    .blog-hero{height:300px;width:100%}
+    .blog-hero img{width:100%;height:100%;object-fit:cover}
     .blog-hero-content{bottom:20px;padding:0 16px}
     .blog-hero-content h1{font-size:26px;line-height:1.2;margin-bottom:6px}
     .blog-hero-content>p{font-size:14px;margin-bottom:10px;line-height:1.5}
