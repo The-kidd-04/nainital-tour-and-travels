@@ -55,7 +55,10 @@
       "Bash(do)",
       "Bash(f=\"/c/Users/kamal/cc/$page/index.html\")",
       "Bash(sed -i 's|<header id=\"\"navbar\"\" style=\"\"position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 1px 12px rgba\\(0,0,0,.06\\);padding:10px 0;\"\">|<header id=\"\"navbar\"\" class=\"\"blog-navbar\"\">|' \"$f\")",
-      "Bash(echo \"Fixed: $page\")"
+      "Bash(echo \"Fixed: $page\")",
+      "Bash(sed -i 's|wa.me/-|wa.me/919917080362|g' \"$f\")",
+      "Bash(sed -i 's|tel:-|tel:+919917080362|g' \"$f\")",
+      "Bash(sed -i 's|>Call: -<|>Call: +91 99170 80362<|g' \"$f\")"
     ]
   }
 }
