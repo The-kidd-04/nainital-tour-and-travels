@@ -12,6 +12,21 @@ section,header,footer,main,div{max-width:100vw}
 .blog-nav-links a:hover{color:var(--primary);background:var(--primary-light)}
 .blog-back-btn{display:none;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--primary);padding:8px 14px;border-radius:8px;background:var(--primary-light)}
 
+/* Back to Blogs Bar */
+.blog-top-bar{background:var(--light);border-bottom:1px solid var(--light-2);padding:10px 0}
+.blog-top-bar .container{display:flex;align-items:center;justify-content:space-between}
+.blog-top-bar a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--primary);padding:6px 14px;border-radius:50px;background:var(--primary-light);transition:all .25s}
+.blog-top-bar a:hover{background:var(--primary);color:#fff}
+.blog-top-bar a i{width:14px;height:14px}
+.blog-top-bar span{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:4px}
+
+/* Floating CTA */
+.blog-float-cta{position:fixed;bottom:0;left:0;right:0;z-index:900;background:var(--white);border-top:1px solid var(--light-2);box-shadow:0 -4px 20px rgba(0,0,0,.1);padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:10px;transform:translateY(100%);transition:transform .3s ease;padding-bottom:max(10px,env(safe-area-inset-bottom))}
+.blog-float-cta.visible{transform:translateY(0)}
+.blog-float-cta .float-text{font-size:13px;font-weight:700;color:var(--dark);margin-right:auto;display:flex;flex-direction:column;line-height:1.2}
+.blog-float-cta .float-text small{font-size:11px;font-weight:400;color:var(--gray)}
+.blog-float-cta .btn{padding:10px 20px;font-size:13px}
+
 /* Hero Banner */
 .blog-hero{position:relative;height:420px;overflow:hidden;margin:0;padding:0;left:0;right:0}
 .blog-hero img{width:100%;height:100%;object-fit:cover;display:block;margin:0;padding:0}
@@ -100,6 +115,13 @@ section,header,footer,main,div{max-width:100vw}
     .blog-navbar .nav-container{padding:0 10px}
     .blog-navbar .btn-sm{padding:7px 12px;font-size:11px}
     .blog-navbar .logo-img{height:30px}
+
+    /* Floating CTA mobile */
+    .blog-float-cta{padding:8px 12px;gap:8px}
+    .blog-float-cta .float-text{font-size:12px}
+    .blog-float-cta .float-text small{font-size:10px}
+    .blog-float-cta .btn{padding:9px 14px;font-size:12px}
+    .blog-top-bar .container{flex-wrap:wrap;gap:6px}
 
     /* Full width overrides */
     .blog-hero{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
