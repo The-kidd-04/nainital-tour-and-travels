@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Mountain peaks -->
+  <path d="M10 58 L30 22 L42 40 L55 18 L68 40 L78 28 L90 58Z" fill="#14532d"/>
+  <path d="M20 58 L38 30 L48 42 L55 32 L65 45 L75 36 L88 58Z" fill="#1b6b3a"/>
+  <!-- Snow caps -->
+  <path d="M30 22 L36 32 L42 40 L48 30 L55 18 L60 28 L68 40 L72 34 L78 28 L82 35 L86 42 L80 42 L72 38 L68 42 L60 32 L55 22 L48 34 L42 42 L36 34Z" fill="white" opacity="0.85"/>
+  <!-- Sun -->
+  <circle cx="82" cy="18" r="8" fill="#f59e0b"/>
+  <circle cx="82" cy="18" r="5" fill="#fbbf24"/>
+  <!-- Sun rays -->
+  <line x1="82" y1="6" x2="82" y2="9" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="82" y1="27" x2="82" y2="30" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="70" y1="18" x2="73" y2="18" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="91" y1="18" x2="94" y2="18" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="73.5" y1="9.5" x2="75.5" y2="11.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="88.5" y1="24.5" x2="90.5" y2="26.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="90.5" y1="9.5" x2="88.5" y2="11.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="75.5" y1="24.5" x2="73.5" y2="26.5" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Water/lake -->
+  <ellipse cx="50" cy="60" rx="44" ry="5" fill="#0ea5e9" opacity="0.25"/>
+  <path d="M12 58 Q30 54 50 58 Q70 62 88 58" stroke="#0ea5e9" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Road/path -->
+  <path d="M40 58 Q50 50 60 58" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Text: Nainital -->
+  <text x="105" y="38" font-family="Georgia, 'Playfair Display', serif" font-size="28" font-weight="900" fill="#14532d" letter-spacing="-0.5">Nainital</text>
+  <!-- Text: Tour & Travels -->
+  <text x="106" y="56" font-family="Arial, 'Poppins', sans-serif" font-size="13" font-weight="600" fill="#64748b" letter-spacing="3">TOUR &amp; TRAVELS</text>
+  <!-- Decorative line -->
+  <line x1="106" y1="62" x2="260" y2="62" stroke="#1b6b3a" stroke-width="1.5" opacity="0.3"/>
+  <!-- Tagline -->
+  <text x="106" y="74" font-family="Arial, 'Poppins', sans-serif" font-size="9" fill="#94a3b8" letter-spacing="1.5">EXPLORE DEVBHOOMI UTTARAKHAND</text>
+</svg>
