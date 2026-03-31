@@ -45,7 +45,13 @@
       "Bash(git push:*)",
       "WebFetch(domain:www.pexels.com)",
       "Bash(\"UA=Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" __NEW_LINE_64b68f4444b17923__ echo '=== Mussoorie ===' curl -sA $UA https://www.pexels.com/search/mussoorie/)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(curl -sI https://the-kidd-04.github.io/nainital-tour-and-travels/kedarnath.html)",
+      "Bash(ls:*)",
+      "Bash(for page:*)",
+      "Bash(do mkdir:*)",
+      "Bash(mv \"$page.html\" \"$page/index.html\")",
+      "Bash(echo \"Moved $page.html -> $page/index.html\")"
     ]
   }
 }
