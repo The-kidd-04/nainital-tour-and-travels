@@ -129,7 +129,7 @@ if (form) {
         if (msg) text += `*Details:* ${msg}%0A`;
 
         // Open WhatsApp with the message
-        window.open(`https://wa.me/919917080362?text=${text}`, '_blank');
+        window.open(`https://wa.me/919917011108?text=${text}`, '_blank');
 
         // Show success
         const btn = form.querySelector('button[type="submit"]');
@@ -250,7 +250,7 @@ if (form) {
 
             // WhatsApp link
             const waText = `Hi! I want to book a trip.%0A*From:* ${pickup}%0A*To:* ${dest}%0A*Distance:* ${oneWayKm} km%0A*Vehicle:* ${vehicleText}%0A*Estimated Fare:* ₹${totalFare.toLocaleString('en-IN')}`;
-            document.getElementById('fareWhatsApp').href = `https://wa.me/919917080362?text=${waText}`;
+            document.getElementById('fareWhatsApp').href = `https://wa.me/919917011108?text=${waText}`;
 
             resultBox.style.display = 'block';
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
