@@ -1,0 +1,111 @@
+/* ===== BLOG PAGE STYLES ===== */
+
+/* Nav */
+.blog-nav-links{display:flex;gap:8px;align-items:center}
+.blog-nav-links a{padding:8px 16px;font-size:14px;font-weight:500;color:var(--dark-3);border-radius:8px;transition:all .25s}
+.blog-nav-links a:hover{color:var(--primary);background:var(--primary-light)}
+
+/* Hero Banner */
+.blog-hero{position:relative;height:420px;overflow:hidden}
+.blog-hero img{width:100%;height:100%;object-fit:cover}
+.blog-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,.3) 0%,rgba(15,23,42,.75) 100%)}
+.blog-hero-content{position:absolute;bottom:40px;left:0;right:0;padding:0 24px;max-width:1200px;margin:0 auto;color:#fff}
+.blog-breadcrumb{display:inline-block;font-size:13px;color:rgba(255,255,255,.7);margin-bottom:12px;padding:4px 14px;background:rgba(255,255,255,.1);border-radius:50px;backdrop-filter:blur(8px)}
+.blog-breadcrumb:hover{color:#fff;background:rgba(255,255,255,.2)}
+.blog-hero-content h1{font-size:clamp(32px,5vw,48px);font-weight:900;margin-bottom:8px;letter-spacing:-0.5px}
+.blog-hero-content>p{font-size:17px;opacity:.85;margin-bottom:16px}
+.blog-hero-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;opacity:.75}
+.blog-hero-meta span{display:flex;align-items:center;gap:6px}
+.blog-hero-meta i{width:16px;height:16px}
+
+/* Layout */
+.blog-main{padding:50px 0 80px}
+.blog-layout{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+
+/* Content */
+.blog-content h2{font-size:26px;font-weight:900;color:var(--dark);margin:36px 0 14px;padding-top:12px;border-top:1px solid var(--light-2)}
+.blog-content h2:first-of-type{border-top:none;margin-top:0}
+.blog-content p{font-size:15px;color:var(--dark-3);line-height:1.8;margin-bottom:16px}
+.blog-content ul{margin:0 0 20px 0;padding-left:0}
+.blog-content li{font-size:15px;color:var(--dark-3);line-height:1.7;padding:6px 0 6px 24px;position:relative}
+.blog-content li::before{content:'';position:absolute;left:0;top:14px;width:8px;height:8px;background:var(--primary);border-radius:50%}
+
+/* Highlight Box */
+.blog-highlight-box{background:var(--primary-light);border-radius:var(--radius);padding:24px 28px;margin-bottom:32px;border-left:4px solid var(--primary)}
+.blog-highlight-box h3{font-size:18px;font-weight:700;color:var(--primary-dark);margin-bottom:14px}
+.quick-info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.quick-info-grid div{font-size:13px}
+.quick-info-grid strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--primary);margin-bottom:2px}
+.quick-info-grid span{color:var(--dark-3);font-weight:500}
+
+/* Itinerary */
+.itinerary{margin:20px 0 30px}
+.itinerary-day{display:flex;gap:16px;margin-bottom:20px;padding:20px;background:var(--light);border-radius:var(--radius-sm);border:1px solid var(--light-2);transition:all .25s}
+.itinerary-day:hover{box-shadow:var(--shadow);border-color:var(--primary-light)}
+.day-badge{flex-shrink:0;width:56px;height:56px;background:var(--primary);color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;line-height:1.1;text-align:center}
+.day-content h4{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.day-content p{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:8px}
+.day-distance{font-size:12px;color:var(--primary);font-weight:600;background:var(--primary-light);padding:3px 12px;border-radius:50px;display:inline-block}
+
+/* Price Table */
+.price-table-wrapper{overflow-x:auto;margin:20px 0;border-radius:var(--radius-sm);border:1px solid var(--light-2)}
+.price-table{width:100%;border-collapse:collapse;font-size:14px}
+.price-table thead{background:var(--primary-dark);color:#fff}
+.price-table th{padding:14px 18px;text-align:left;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.price-table td{padding:14px 18px;border-bottom:1px solid var(--light-2)}
+.price-table tbody tr:hover{background:var(--primary-light)}
+.price-table tbody tr:last-child td{border-bottom:none}
+.price-cell{font-weight:900;color:var(--primary-dark);font-size:16px}
+
+.price-note{background:var(--accent-light);border-radius:var(--radius-sm);padding:16px 20px;margin:16px 0;border-left:4px solid var(--accent)}
+.price-note p{margin:0;font-size:13px;color:var(--dark-3)}
+
+/* Blog CTA */
+.blog-cta{background:linear-gradient(135deg,var(--primary),#22863a);border-radius:var(--radius);padding:36px;text-align:center;margin-top:36px;color:#fff}
+.blog-cta h3{font-size:24px;font-weight:900;margin-bottom:8px}
+.blog-cta p{opacity:.9;font-size:15px;margin-bottom:20px}
+.blog-cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.blog-cta .btn-outline{border-color:rgba(255,255,255,.4);color:#fff}
+.blog-cta .btn-outline:hover{background:#fff;color:var(--primary-dark);border-color:#fff}
+.blog-cta .btn-primary{background:#fff;color:var(--primary-dark)}
+.blog-cta .btn-primary:hover{background:var(--accent);color:#fff}
+
+/* Sidebar */
+.blog-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:var(--white);border:1px solid var(--light-2);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-sm)}
+.sidebar-card h4{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--light-2)}
+.sidebar-card p{font-size:14px;color:var(--gray);margin-bottom:14px}
+.sidebar-links{display:flex;flex-direction:column;gap:2px}
+.sidebar-links li{padding:0}
+.sidebar-links li::before{display:none}
+.sidebar-links a{display:block;padding:10px 14px;font-size:14px;color:var(--dark-3);border-radius:8px;font-weight:500;transition:all .2s}
+.sidebar-links a:hover{background:var(--primary-light);color:var(--primary);padding-left:18px}
+.sidebar-vehicle{display:flex;gap:12px;align-items:center}
+.sidebar-vehicle-icon{font-size:36px}
+.sidebar-vehicle strong{display:block;font-size:15px;color:var(--dark)}
+.sidebar-vehicle span{font-size:12px;color:var(--gray)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .blog-nav-links{display:none}
+    .blog-hero{height:320px}
+    .blog-hero-content{bottom:24px;padding:0 16px}
+    .blog-hero-content h1{font-size:28px}
+    .blog-hero-meta{gap:12px;font-size:12px}
+    .blog-layout{grid-template-columns:1fr;gap:28px}
+    .blog-sidebar{position:static}
+    .quick-info-grid{grid-template-columns:1fr 1fr}
+    .itinerary-day{flex-direction:column;gap:10px}
+    .day-badge{width:auto;height:auto;padding:6px 16px;border-radius:50px;font-size:12px}
+    .blog-cta{padding:24px 18px}
+    .blog-cta-buttons{flex-direction:column;align-items:center}
+    .blog-cta-buttons .btn{width:100%;max-width:280px;justify-content:center}
+    .price-table{font-size:13px}
+    .price-table th,.price-table td{padding:10px 12px}
+}
+@media(max-width:480px){
+    .blog-hero{height:260px}
+    .blog-hero-content h1{font-size:24px}
+    .quick-info-grid{grid-template-columns:1fr}
+    .blog-content h2{font-size:22px}
+}
