@@ -21,12 +21,12 @@
   <path d="M12 58 Q30 54 50 58 Q70 62 88 58" stroke="#0ea5e9" stroke-width="1.5" fill="none" opacity="0.5"/>
   <!-- Road/path -->
   <path d="M40 58 Q50 50 60 58" stroke="#f59e0b" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <!-- Text: Nainital -->
-  <text x="105" y="38" font-family="Georgia, 'Playfair Display', serif" font-size="28" font-weight="900" fill="#14532d" letter-spacing="-0.5">Nainital</text>
-  <!-- Text: Tour & Travels -->
-  <text x="106" y="56" font-family="Arial, 'Poppins', sans-serif" font-size="13" font-weight="600" fill="#64748b" letter-spacing="3">TOUR &amp; TRAVELS</text>
+  <!-- Text: Nainital AH -->
+  <text x="105" y="36" font-family="Georgia, 'Playfair Display', serif" font-size="26" font-weight="900" fill="#14532d" letter-spacing="-0.5">Nainital AH</text>
+  <!-- Text: Tour -->
+  <text x="106" y="54" font-family="Arial, 'Poppins', sans-serif" font-size="14" font-weight="600" fill="#64748b" letter-spacing="4">TOUR</text>
   <!-- Decorative line -->
   <line x1="106" y1="62" x2="260" y2="62" stroke="#1b6b3a" stroke-width="1.5" opacity="0.3"/>
   <!-- Tagline -->
-  <text x="106" y="74" font-family="Arial, 'Poppins', sans-serif" font-size="9" fill="#94a3b8" letter-spacing="1.5">EXPLORE DEVBHOOMI UTTARAKHAND</text>
+  <text x="106" y="72" font-family="Arial, 'Poppins', sans-serif" font-size="9" fill="#94a3b8" letter-spacing="1.5">EXPLORE DEVBHOOMI UTTARAKHAND</text>
 </svg>
