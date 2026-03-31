@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our travel guides for Uttarakhand destinations - Kedarnath, Char Dham, Mussoorie, Nainital, Rishikesh, Auli. Itineraries, prices & booking.">
+    <title>Travel Blogs & Guides | Nainital Tour and Travels</title>
+    <link rel="icon" type="image/svg+xml" href="../logo-icon.svg">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
+    <style>
+        .blogs-hero{background:var(--primary-dark);padding:100px 20px 50px;text-align:center;color:#fff}
+        .blogs-hero h1{font-size:clamp(28px,5vw,42px);font-weight:900;margin-bottom:8px}
+        .blogs-hero p{font-size:16px;opacity:.8;max-width:500px;margin:0 auto}
+        .blogs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:50px 0 80px}
+        .blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid #e2e8f0;transition:all .3s}
+        .blog-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(0,0,0,.12);border-color:transparent}
+        .blog-card img{width:100%;height:200px;object-fit:cover;display:block}
+        .blog-card-body{padding:22px}
+        .blog-card-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary);margin-bottom:6px;display:block}
+        .blog-card-body h3{font-size:20px;font-weight:900;color:var(--dark);margin-bottom:8px}
+        .blog-card-body p{font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:14px}
+        .blog-card-meta{display:flex;gap:14px;font-size:12px;color:var(--gray-light);margin-bottom:14px}
+        .blog-card-meta span{display:flex;align-items:center;gap:4px}
+        .blog-card-meta i{width:14px;height:14px}
+        .blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:var(--primary)}
+        .blog-card-link:hover{gap:10px}
+        @media(max-width:768px){.blogs-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;padding:30px 0 60px}.blogs-hero{padding:80px 16px 40px}}
+        @media(max-width:480px){.blog-card img{height:170px}.blog-card-body{padding:16px}.blog-card-body h3{font-size:18px}}
+    </style>
+</head>
+<body>
+    <header id="navbar" class="blog-navbar">
+        <nav class="container nav-container">
+            <a href="../" class="logo"><img src="../logo.svg" alt="Nainital Tour and Travels" class="logo-img"></a>
+            <a href="../" class="blog-back-btn"><i data-lucide="arrow-left"></i> Home</a>
+            <div class="blog-nav-links">
+                <a href="../">Home</a>
+                <a href="../#packages">Packages</a>
+                <a href="../#fare">Fare Calculator</a>
+                <a href="../#contact">Contact</a>
+            </div>
+            <a href="https://wa.me/919917080362?text=Hi%2C%20I%20want%20to%20book%20a%20tour" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="blogs-hero">
+        <h1>Travel Guides & Blogs</h1>
+        <p>Everything you need to know before your Uttarakhand trip — itineraries, prices, tips & more</p>
+    </section>
+
+    <main class="container">
+        <div class="blogs-grid">
+            <a href="../kedarnath/" class="blog-card">
+                <img src="https://images.pexels.com/photos/12151764/pexels-photo-12151764.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Kedarnath Trip" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Pilgrimage</span>
+                    <h3>Kedarnath Trip</h3>
+                    <p>Sacred pilgrimage to Lord Shiva's abode at 3,583m. Complete trek guide, itinerary & prices.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 3-4 Days</span><span><i data-lucide="map-pin"></i> Rudraprayag</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="../chardham/" class="blog-card">
+                <img src="https://images.pexels.com/photos/4595295/pexels-photo-4595295.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Char Dham Yatra" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Pilgrimage</span>
+                    <h3>Char Dham Yatra</h3>
+                    <p>Complete circuit of Yamunotri, Gangotri, Kedarnath & Badrinath. The ultimate pilgrimage guide.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 10-12 Days</span><span><i data-lucide="map-pin"></i> Uttarakhand</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="../mussoorie/" class="blog-card">
+                <img src="https://images.pexels.com/photos/10617190/pexels-photo-10617190.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Mussoorie Tour" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Hill Station</span>
+                    <h3>Mussoorie Tour</h3>
+                    <p>Queen of Hills — Mall Road, Kempty Falls, Gun Hill & more. Perfect family getaway guide.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 2-3 Days</span><span><i data-lucide="map-pin"></i> Dehradun</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="../nainital/" class="blog-card">
+                <img src="https://images.pexels.com/photos/29870625/pexels-photo-29870625.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Nainital Tour" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Hill Station</span>
+                    <h3>Nainital Tour</h3>
+                    <p>City of Lakes — Naini Lake boating, Snow View Point, Tiffin Top & nearby lakes guide.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 2-3 Days</span><span><i data-lucide="map-pin"></i> Kumaon</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="../rishikesh/" class="blog-card">
+                <img src="https://images.pexels.com/photos/19041829/pexels-photo-19041829.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Rishikesh Adventure" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Adventure</span>
+                    <h3>Rishikesh Adventure</h3>
+                    <p>Rafting, bungee jumping, Ganga Aarti & Haridwar combo. The ultimate adventure guide.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 2-3 Days</span><span><i data-lucide="map-pin"></i> Dehradun</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="../auli/" class="blog-card">
+                <img src="https://images.pexels.com/photos/13001325/pexels-photo-13001325.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Auli Snow Trip" loading="lazy">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag">Adventure</span>
+                    <h3>Auli Snow Trip</h3>
+                    <p>Skiing, Asia's longest gondola, Himalayan panorama. India's premier snow destination guide.</p>
+                    <div class="blog-card-meta"><span><i data-lucide="clock"></i> 3-4 Days</span><span><i data-lucide="map-pin"></i> Chamoli</span></div>
+                    <span class="blog-card-link">Read Guide <i data-lucide="arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer" style="padding-bottom:0">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none">
+                <p>&copy; 2026 Nainital Tour and Travels. All rights reserved.</p>
+                <p><a href="../" style="color:var(--accent);">Back to Home</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded',()=>{if(typeof lucide!=='undefined')lucide.createIcons();});</script>
+</body>
+</html>
