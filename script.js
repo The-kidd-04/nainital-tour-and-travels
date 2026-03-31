@@ -287,6 +287,16 @@ if (form) {
                 calculateFare();
             });
         });
+
+        // Destination cards — click to go to fare calculator
+        document.querySelectorAll('.dest-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const destName = card.querySelector('h3').textContent.trim();
+                document.getElementById('destInput').value = destName + ', Uttarakhand';
+                document.getElementById('pickupInput').focus();
+                document.getElementById('fare').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
     });
 })();
 
