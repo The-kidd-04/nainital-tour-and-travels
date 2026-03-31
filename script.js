@@ -144,6 +144,152 @@ if (form) {
     });
 }
 
+// ===== FARE CALCULATOR WITH MAP =====
+(function() {
+    let map, pickupMarker, destMarker, routeLine;
+
+    // Initialize map centered on Uttarakhand
+    function initMap() {
+        if (!document.getElementById('fareMap') || typeof L === 'undefined') return;
+
+        map = L.map('fareMap', { scrollWheelZoom: false }).setView([30.0668, 79.0193], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        // Custom icons
+        window.pickupIcon = L.divIcon({ html: '<div style="background:#1b6b3a;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid #fff;">A</div>', iconSize: [30, 30], iconAnchor: [15, 15], className: '' });
+        window.destIcon = L.divIcon({ html: '<div style="background:#e11d48;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid #fff;">B</div>', iconSize: [30, 30], iconAnchor: [15, 15], className: '' });
+    }
+
+    // Geocode a place name using Nominatim (free)
+    async function geocode(place) {
+        const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place + ', India')}&format=json&limit=1`);
+        const data = await res.json();
+        if (data.length === 0) return null;
+        return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon), name: data[0].display_name };
+    }
+
+    // Get road distance using OSRM (free)
+    async function getRoute(from, to) {
+        const res = await fetch(`https://router.project-osrm.org/route/v1/driving/${from.lng},${from.lat};${to.lng},${to.lat}?overview=full&geometries=geojson`);
+        const data = await res.json();
+        if (data.code !== 'Ok') return null;
+        const route = data.routes[0];
+        return {
+            distanceKm: (route.distance / 1000).toFixed(1),
+            durationHrs: (route.duration / 3600).toFixed(1),
+            geometry: route.geometry
+        };
+    }
+
+    // Show route on map
+    function showOnMap(from, to, geometry) {
+        if (pickupMarker) map.removeLayer(pickupMarker);
+        if (destMarker) map.removeLayer(destMarker);
+        if (routeLine) map.removeLayer(routeLine);
+
+        pickupMarker = L.marker([from.lat, from.lng], { icon: window.pickupIcon }).addTo(map).bindPopup('<b>Pickup:</b> ' + from.name.split(',')[0]);
+        destMarker = L.marker([to.lat, to.lng], { icon: window.destIcon }).addTo(map).bindPopup('<b>Destination:</b> ' + to.name.split(',')[0]);
+
+        routeLine = L.geoJSON(geometry, {
+            style: { color: '#1b6b3a', weight: 4, opacity: 0.8 }
+        }).addTo(map);
+
+        map.fitBounds(routeLine.getBounds().pad(0.15));
+    }
+
+    // Calculate fare
+    async function calculateFare() {
+        const pickup = document.getElementById('pickupInput').value.trim();
+        const dest = document.getElementById('destInput').value.trim();
+        const ratePerKm = parseInt(document.getElementById('vehicleSelect').value);
+        const btn = document.getElementById('calcFareBtn');
+        const resultBox = document.getElementById('fareResult');
+
+        if (!pickup || !dest) {
+            alert('Please enter both pickup and destination locations.');
+            return;
+        }
+
+        btn.innerHTML = '<i data-lucide="loader-2"></i> Calculating...';
+        btn.disabled = true;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+
+        try {
+            const [fromGeo, toGeo] = await Promise.all([geocode(pickup), geocode(dest)]);
+
+            if (!fromGeo || !toGeo) {
+                alert('Could not find one of the locations. Please try a more specific name (e.g. "Delhi" or "Kedarnath, Uttarakhand").');
+                return;
+            }
+
+            const route = await getRoute(fromGeo, toGeo);
+            if (!route) {
+                alert('Could not find a driving route between these locations.');
+                return;
+            }
+
+            // Show on map
+            showOnMap(fromGeo, toGeo, route.geometry);
+
+            // Calculate fare (round trip = distance × 2)
+            const oneWayKm = parseFloat(route.distanceKm);
+            const totalFare = Math.round(oneWayKm * ratePerKm);
+            const vehicleText = document.getElementById('vehicleSelect').options[document.getElementById('vehicleSelect').selectedIndex].text.split('—')[0].trim();
+
+            // Duration in hours and minutes
+            const hrs = Math.floor(route.durationHrs);
+            const mins = Math.round((route.durationHrs - hrs) * 60);
+
+            // Show results
+            document.getElementById('resultDistance').textContent = oneWayKm + ' km (one way)';
+            document.getElementById('resultDuration').textContent = hrs + 'h ' + mins + 'm (approx)';
+            document.getElementById('resultVehicle').textContent = vehicleText;
+            document.getElementById('resultFare').textContent = '₹' + totalFare.toLocaleString('en-IN');
+
+            // WhatsApp link
+            const waText = `Hi! I want to book a trip.%0A*From:* ${pickup}%0A*To:* ${dest}%0A*Distance:* ${oneWayKm} km%0A*Vehicle:* ${vehicleText}%0A*Estimated Fare:* ₹${totalFare.toLocaleString('en-IN')}`;
+            document.getElementById('fareWhatsApp').href = `https://wa.me/-?text=${waText}`;
+
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        } catch (err) {
+            alert('Something went wrong. Please check your internet and try again.');
+        } finally {
+            btn.innerHTML = '<i data-lucide="calculator"></i> Calculate Fare';
+            btn.disabled = false;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initMap, 500);
+
+        const calcBtn = document.getElementById('calcFareBtn');
+        if (calcBtn) calcBtn.addEventListener('click', calculateFare);
+
+        // Swap button
+        const swapBtn = document.getElementById('swapBtn');
+        if (swapBtn) swapBtn.addEventListener('click', () => {
+            const p = document.getElementById('pickupInput');
+            const d = document.getElementById('destInput');
+            [p.value, d.value] = [d.value, p.value];
+        });
+
+        // Popular route chips
+        document.querySelectorAll('.route-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.getElementById('pickupInput').value = chip.dataset.from;
+                document.getElementById('destInput').value = chip.dataset.to;
+                calculateFare();
+            });
+        });
+    });
+})();
+
 // ===== PARALLAX =====
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero-content');

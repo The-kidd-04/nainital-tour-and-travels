@@ -30,6 +30,10 @@
 
     <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
 
+    <!-- Leaflet Map (free, no API key) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -75,6 +79,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#destinations" class="nav-link">Destinations</a></li>
                 <li><a href="#packages" class="nav-link">Packages</a></li>
+                <li><a href="#fare" class="nav-link">Fare Calculator</a></li>
                 <li><a href="#fleet" class="nav-link">Our Fleet</a></li>
                 <li><a href="#reviews" class="nav-link">Reviews</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -366,6 +371,92 @@
                         <p>Tell us your dates, group size & destination. We'll plan the perfect Uttarakhand trip for you!</p>
                     </div>
                     <a href="https://wa.me/-?text=Hi%2C%20I%20want%20a%20custom%20tour" class="btn btn-light" target="_blank" rel="noopener">Plan My Trip</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FARE CALCULATOR WITH MAP -->
+    <section id="fare" class="section">
+        <div class="container">
+            <div class="section-head" data-aos>
+                <span class="tag">Fare Calculator</span>
+                <h2>Check Distance & <span class="text-accent">Fare</span></h2>
+                <p>Enter your pickup and destination to get estimated distance and price instantly</p>
+            </div>
+
+            <div class="fare-wrapper" data-aos>
+                <div class="fare-form-side">
+                    <div class="fare-inputs">
+                        <div class="fare-field">
+                            <label><i data-lucide="circle-dot"></i> Pickup Location</label>
+                            <input type="text" id="pickupInput" placeholder="e.g. Delhi, Dehradun, Haridwar...">
+                        </div>
+                        <div class="fare-swap" id="swapBtn" title="Swap locations">
+                            <i data-lucide="arrow-up-down"></i>
+                        </div>
+                        <div class="fare-field">
+                            <label><i data-lucide="map-pin"></i> Destination</label>
+                            <input type="text" id="destInput" placeholder="e.g. Kedarnath, Nainital, Mussoorie...">
+                        </div>
+                        <div class="fare-field">
+                            <label><i data-lucide="truck"></i> Vehicle Type</label>
+                            <select id="vehicleSelect">
+                                <option value="14">Force Tempo Traveller (12-14 Seater) — ₹-/km</option>
+                                <option value="12">Force Traveller Mini (7-9 Seater) — ₹-/km</option>
+                                <option value="10">Innova / Ertiga (4-6 Seater) — ₹-/km</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-full" id="calcFareBtn">
+                            <i data-lucide="calculator"></i> Calculate Fare
+                        </button>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="fare-result" id="fareResult" style="display:none;">
+                        <div class="fare-result-header">Estimated Trip Details</div>
+                        <div class="fare-result-row">
+                            <span>Distance</span>
+                            <strong id="resultDistance">-</strong>
+                        </div>
+                        <div class="fare-result-row">
+                            <span>Duration</span>
+                            <strong id="resultDuration">-</strong>
+                        </div>
+                        <div class="fare-result-row">
+                            <span>Vehicle</span>
+                            <strong id="resultVehicle">-</strong>
+                        </div>
+                        <div class="fare-result-row fare-total">
+                            <span>Estimated Fare</span>
+                            <strong id="resultFare">-</strong>
+                        </div>
+                        <p class="fare-note">* Approximate fare. Final price may vary based on route, season & stops. Tolls & parking included.</p>
+                        <a href="#" id="fareWhatsApp" class="btn btn-wa-hero btn-full" target="_blank" rel="noopener" style="margin-top:12px;font-size:14px;padding:12px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Book This Trip on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="fare-map-side">
+                    <div id="fareMap" class="fare-map"></div>
+                </div>
+            </div>
+
+            <!-- Quick Popular Routes -->
+            <div class="popular-routes" data-aos>
+                <h4>Popular Routes (click to calculate)</h4>
+                <div class="routes-grid">
+                    <button class="route-chip" data-from="Delhi" data-to="Kedarnath">Delhi → Kedarnath</button>
+                    <button class="route-chip" data-from="Delhi" data-to="Nainital">Delhi → Nainital</button>
+                    <button class="route-chip" data-from="Delhi" data-to="Mussoorie">Delhi → Mussoorie</button>
+                    <button class="route-chip" data-from="Delhi" data-to="Rishikesh">Delhi → Rishikesh</button>
+                    <button class="route-chip" data-from="Dehradun" data-to="Kedarnath">Dehradun → Kedarnath</button>
+                    <button class="route-chip" data-from="Dehradun" data-to="Mussoorie">Dehradun → Mussoorie</button>
+                    <button class="route-chip" data-from="Haridwar" data-to="Badrinath">Haridwar → Badrinath</button>
+                    <button class="route-chip" data-from="Delhi" data-to="Auli">Delhi → Auli</button>
                 </div>
             </div>
         </div>

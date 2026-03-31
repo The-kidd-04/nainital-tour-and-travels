@@ -164,6 +164,37 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;border:none;o
 .custom-trip h3{font-family:var(--font-head);font-size:26px;font-weight:800}
 .custom-trip p{opacity:.9;font-size:14px;margin-top:6px}
 
+/* ===== FARE CALCULATOR ===== */
+.fare-wrapper{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start}
+.fare-form-side{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-lg);border:1px solid var(--light-2)}
+.fare-inputs{display:flex;flex-direction:column;gap:4px}
+.fare-field{margin-bottom:12px}
+.fare-field label{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.fare-field label i{width:16px;height:16px;color:var(--primary)}
+.fare-field input,.fare-field select{width:100%;padding:12px 16px;border:1.5px solid var(--light-2);border-radius:var(--radius-xs);font-size:14px;color:var(--dark);transition:all .25s;background:var(--white)}
+.fare-field input:focus,.fare-field select:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--primary-glow)}
+.fare-swap{display:flex;justify-content:center;margin:-4px 0}
+.fare-swap i{width:20px;height:20px;color:var(--gray-light);cursor:pointer;transition:all .3s;padding:4px;border-radius:50%;background:var(--light)}
+.fare-swap i:hover{color:var(--primary);background:var(--primary-light);transform:rotate(180deg)}
+
+.fare-result{margin-top:20px;background:var(--light);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--light-2)}
+.fare-result-header{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--light-2)}
+.fare-result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px;color:var(--gray)}
+.fare-result-row strong{color:var(--dark);font-weight:600}
+.fare-total{border-top:2px solid var(--primary-light);margin-top:8px;padding-top:12px}
+.fare-total span{font-size:16px;font-weight:600;color:var(--dark)}
+.fare-total strong{font-size:24px;font-family:var(--font-head);font-weight:900;color:var(--primary-dark)}
+.fare-note{font-size:11px;color:var(--gray-light);margin-top:10px;line-height:1.5;font-style:italic}
+
+.fare-map-side{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);border:2px solid var(--light-2)}
+.fare-map{width:100%;height:480px;background:var(--light)}
+
+.popular-routes{margin-top:40px;text-align:center}
+.popular-routes h4{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:16px}
+.routes-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.route-chip{padding:8px 18px;border-radius:50px;border:1.5px solid var(--light-2);font-size:13px;font-weight:500;color:var(--dark-3);cursor:pointer;transition:all .25s;background:var(--white)}
+.route-chip:hover,.route-chip:active{background:var(--primary);color:var(--white);border-color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(27,107,58,.2)}
+
 /* ===== FLEET ===== */
 .fleet-showcase{max-width:700px;margin:0 auto 36px}
 .fleet-main{background:linear-gradient(145deg,var(--primary-light),#ecfdf5);border:2px solid var(--primary);border-radius:var(--radius);padding:40px;text-align:center;position:relative;overflow:hidden}
@@ -349,6 +380,13 @@ button,input,select,textarea{font-family:inherit;font-size:inherit;border:none;o
     .price-amount{font-size:24px}
     .custom-trip-inner{flex-direction:column;text-align:center;padding:28px 20px;gap:18px}
     .custom-trip h3{font-size:22px}
+
+    /* --- Fare Calculator --- */
+    .fare-wrapper{grid-template-columns:1fr}
+    .fare-map{height:350px}
+    .fare-form-side{padding:20px}
+    .routes-grid{gap:8px}
+    .route-chip{font-size:12px;padding:7px 14px}
 
     /* --- Fleet --- */
     .fleet-showcase{margin-bottom:24px}
