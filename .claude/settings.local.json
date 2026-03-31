@@ -59,7 +59,11 @@
       "Bash(sed -i 's|wa.me/-|wa.me/919917080362|g' \"$f\")",
       "Bash(sed -i 's|tel:-|tel:+919917080362|g' \"$f\")",
       "Bash(sed -i 's|>Call: -<|>Call: +91 99170 80362<|g' \"$f\")",
-      "Bash(curl -sI https://the-kidd-04.github.io/nainital-tour-and-travels/blog.css)"
+      "Bash(curl -sI https://the-kidd-04.github.io/nainital-tour-and-travels/blog.css)",
+      "Bash(cp \"/c/Users/kamal/Downloads/WhatsApp Image 2026-03-31 at 4.17.27 PM.jpeg\" /c/Users/kamal/cc/images/winger-side.jpeg)",
+      "Bash(cp \"/c/Users/kamal/Downloads/WhatsApp Image 2026-03-31 at 4.17.28 PM.jpeg\" /c/Users/kamal/cc/images/winger-front.jpeg)",
+      "Bash(cp \"/c/Users/kamal/Downloads/WhatsApp Image 2026-03-31 at 4.17.29 PM.jpeg\" /c/Users/kamal/cc/images/winger-interior.jpeg)",
+      "Bash(cp \"/c/Users/kamal/Downloads/WhatsApp Video 2026-03-31 at 4.17.30 PM.mp4\" /c/Users/kamal/cc/images/winger-video.mp4)"
     ]
   }
 }
