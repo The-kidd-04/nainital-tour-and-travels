@@ -58,7 +58,8 @@
       "Bash(echo \"Fixed: $page\")",
       "Bash(sed -i 's|wa.me/-|wa.me/919917080362|g' \"$f\")",
       "Bash(sed -i 's|tel:-|tel:+919917080362|g' \"$f\")",
-      "Bash(sed -i 's|>Call: -<|>Call: +91 99170 80362<|g' \"$f\")"
+      "Bash(sed -i 's|>Call: -<|>Call: +91 99170 80362<|g' \"$f\")",
+      "Bash(curl -sI https://the-kidd-04.github.io/nainital-tour-and-travels/blog.css)"
     ]
   }
 }
