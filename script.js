@@ -300,6 +300,37 @@ if (form) {
     });
 })();
 
+// ===== WHATSAPP CHAT WIDGET =====
+(function() {
+    const widget = document.getElementById('waWidget');
+    const fab = document.getElementById('waFab');
+    const closeBtn = document.getElementById('waClose');
+    if (!widget || !fab) return;
+
+    fab.addEventListener('click', () => {
+        widget.classList.toggle('open');
+        const badge = fab.querySelector('.wa-fab-badge');
+        if (badge) badge.classList.add('hidden');
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            widget.classList.remove('open');
+        });
+    }
+
+    // Auto-open after 5 seconds on desktop
+    if (window.innerWidth > 768) {
+        setTimeout(() => {
+            if (!widget.classList.contains('open')) {
+                widget.classList.add('open');
+                const badge = fab.querySelector('.wa-fab-badge');
+                if (badge) badge.classList.add('hidden');
+            }
+        }, 5000);
+    }
+})();
+
 // ===== PARALLAX =====
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero-content');
